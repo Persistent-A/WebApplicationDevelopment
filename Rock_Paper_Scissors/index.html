@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3b8eec32e0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="modal.css">
+    <title>Rock Paper Scissor</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Rock Paper Scissors</h1>
+            <!-- <input type="button" id="restart" class="restart-btn" value="Restart Game" onclick="reload"> -->
+            <button id="restart" class="restart-btn" onclick="reload">Restart Game</button>
+            <div id="score" class="score">
+                <p>
+                    <span id="player1_name">Player1</span>
+                    : 
+                    <span id="player1_score">0</span>
+                </p>
+                <p>
+                    <select id="player2_name">
+                        <option value="notSelected">--Please choose the player--</option>
+                        <option value="Computer">Computer</option>
+                        <option value="Player2" onselect="imagePlay2()">Player2</option>
+                    </select>
+                    : 
+                    <span id="player2_score">0</span>
+                </p>
+                <!-- <select name="subject" id="subject">
+                    <option value="" selected="selected">Select Player</option>
+                </select> -->
+            </div>
+        </header>
+        <h2>Make your Selection</h2>
+        <div class="image_container">
+            <div class="choices">
+                <i id="rock" class="choice fas fa-hand-rock fa-5x"></i>
+                <i id="paper" class="choice fas fa-hand-paper fa-5x"></i>
+                <i id="scissors" class="choice fas fa-hand-scissors fa-5x"></i>
+            </div>
+            <div class="choices2">
+            </div>
+        </div>
+    </div>
+
+    <div class="modal"> 
+        <div id="result" class="modal-content"></div>
+    </div>
+    
+
+    <script src="index.js"></script>
+    <!-- <script>
+        const para = document.querySelectorAll("p");
+        para.forEach(function(item){
+            console.log(item.innerHTML)
+        })
+        
+        
+    </script> -->
+</body>
+</html>
