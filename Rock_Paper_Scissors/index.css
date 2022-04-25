@@ -8,8 +8,9 @@
 body{
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    background: #fff;
-    color: #333;
+    background: rgb(247, 231, 231);
+    font-size: larger;
+    color: rgb(49, 64, 38);
 
 }
 .container{
@@ -53,7 +54,7 @@ body{
 }
 
 .score p:first-child{
-    background: rgb(129, 74, 74);
+    background: rgb(164, 92, 169);
 }
 .score p:last-child{
     background: black;
@@ -72,12 +73,12 @@ body{
     color: rgb(101, 35, 146);
 }
 @media(max-width: 700px){
-    .choice{
-        font-size: 110px;
+    .choices{
+        font-size: 70px;
     }
 }
 @media(max-width: 500px){
-    .choice{
-        font-size: 80px;
+    .choices{
+        font-size: 30px;
     }
 }

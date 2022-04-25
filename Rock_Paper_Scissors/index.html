@@ -14,7 +14,7 @@
         <header class="header">
             <h1>Rock Paper Scissors</h1>
             <!-- <input type="button" id="restart" class="restart-btn" value="Restart Game" onclick="reload"> -->
-            <button id="restart" class="restart-btn" onclick="reload">Restart Game</button>
+            <button id="restart" class="restart-btn">Restart Game</button>
             <div id="score" class="score">
                 <p>
                     <span id="player1_name">Player1</span>
@@ -25,7 +25,7 @@
                     <select id="player2_name">
                         <option value="notSelected">--Please choose the player--</option>
                         <option value="Computer">Computer</option>
-                        <option value="Player2" onselect="imagePlay2()">Player2</option>
+                        <option value="Player2">Player2</option>
                     </select>
                     : 
                     <span id="player2_score">0</span>
@@ -38,9 +38,14 @@
         <h2>Make your Selection</h2>
         <div class="image_container">
             <div class="choices">
-                <i id="rock" class="choice fas fa-hand-rock fa-5x"></i>
-                <i id="paper" class="choice fas fa-hand-paper fa-5x"></i>
-                <i id="scissors" class="choice fas fa-hand-scissors fa-5x"></i>
+                <!-- <i id="rock" class="choice fas fa-hand-rock fa-5x"></i> -->
+                <img src="images/rock.png" id="rock" class="choice rock1">
+
+                <!-- <i id="paper" class="choice fas fa-hand-paper fa-5x"></i> -->
+                <img src="images/paper.png" id="paper" class="choice paper2">
+
+                <!-- <i id="scissors" class="choice fas fa-hand-scissors fa-5x"></i> -->
+                <img src="images/scissor.png" id="scissors" class="choice scissors1">
             </div>
             <div class="choices2">
             </div>

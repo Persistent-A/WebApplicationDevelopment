@@ -1,14 +1,14 @@
 
-const choices = document.querySelectorAll('.choice');
+const choose = document.querySelectorAll('.choice');
 const choices2sel = document.querySelectorAll('.choice1')
 const score = document.getElementById('score');
 const result = document.getElementById('result');
 const restart = document.getElementById('restart');
 const modal = document.querySelector('.modal');
-const player1Name = document.getElementById('player1_name')
-const player2Name = document.getElementById('player2_name')
-const player1Score = document.getElementById('player1_score')
-const player2Score = document.getElementById('player2_score')
+const player1Name = document.querySelector('#player1_name')
+const player2Name = document.querySelector('#player2_name')
+const player1Score = document.querySelector('#player1_score')
+const player2Score = document.querySelector('#player2_score')
 
 
 
@@ -16,9 +16,13 @@ const player2Score = document.getElementById('player2_score')
 function play(e){
     restart.style.display = 'inline-block';
     const player1Choice = e.target.id;
+    console.log(player1Choice)
     const player2Choice = selectionPlayer2();
+    console.log(player2Choice)
     const winner = getWinner(player1Choice, player2Choice);
     showWinner(winner, player2Choice);
+    
+
     // console.log(player1Choice, player2Choice, winner)
 }
 
@@ -35,9 +39,9 @@ function getComputerChoice(){
 }
 
 // get Player@ Choice
-function getPlayer2Choice(){
+// function getPlayer2Choice(){
     
-}
+// }
 
 
 
@@ -95,16 +99,18 @@ function showWinner(winner, player2Choice){
 
     modal.style.display = 'block';
 }
+
 //Restart Game
 function restartGame(){
     player1Score.innerHTML = 0;
     player2Score.innerHTML = 0;
-    player1Name.innerHTML  = 'Player';
-    player2Name.innerHTML = 'Computer';
     score.innerHTML = 
-    `<p><span id="player1_name">${player1Name.innerHTML}</span>: <span id="player1_score">${player1Score.innerHTML}</span></p>
-    <p><span id="player2_name">${player2Name.innerHTML}</span>: <span id="player2_score">${player2Score.innerHTML}</span></p>`;
-    restart.style.display = 'none' 
+    `<p><span id="player1_name">Player1</span>: <span id="player1_score">0</span></p>
+    <p><select id="player2_name"><option value="notSelected">--Please choose the player--</option>
+        <option value="Computer">Computer</option>
+        <option value="Player2">Player2</option>
+    </select>: <span id="player2_score">0</span></p>`;
+    restart.style.display = 'none';     
 }
 
 function selectionPlayer2(){
@@ -112,7 +118,6 @@ function selectionPlayer2(){
     if(selectedValue == "Computer") {
        return getComputerChoice();
     }
- 
 }
 
 //clear modal
@@ -124,11 +129,15 @@ function clearModal(e){
 
 function changeName() {
     const userName = prompt("enter your name: ");
-    player1Name.innerHTML = userName;
+    if (userName === ''){
+        player1Name.addEventListener('click', changeName);
+    } else { 
+        player1Name.innerHTML = userName;
+    }
 }
 
 //Event listeners
-choices.forEach(choice => choice.addEventListener('click', play));
+choose.forEach(choice => choice.addEventListener('click', play));
 window.addEventListener('click', clearModal);
 restart.addEventListener('click', restartGame);
 player1Name.addEventListener('click', changeName);
