@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/3b8eec32e0.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="modal.css">
+    <!-- <link rel="stylesheet" href="modal.css"> -->
     <title>Rock Paper Scissor</title>
 </head>
 <body>
@@ -35,7 +35,9 @@
                 </select> -->
             </div>
         </header>
-        <h2>Make your Selection</h2>
+        <div class="modal"> 
+            <div id="result" class="modal-content"></div>
+        </div>
         <div class="image_container">
             <div class="choices">
                 <!-- <i id="rock" class="choice fas fa-hand-rock fa-5x"></i> -->
@@ -52,19 +54,8 @@
         </div>
     </div>
 
-    <div class="modal"> 
-        <div id="result" class="modal-content"></div>
-    </div>
     
-
     <script src="index.js"></script>
-    <!-- <script>
-        const para = document.querySelectorAll("p");
-        para.forEach(function(item){
-            console.log(item.innerHTML)
-        })
-        
-        
-    </script> -->
+
 </body>
 </html>

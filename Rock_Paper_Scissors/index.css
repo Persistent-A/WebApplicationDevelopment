@@ -82,3 +82,17 @@ body{
         font-size: 30px;
     }
 }
+.modal{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    
+}
+.text-win{
+    color: green;
+}
+.text-lose{
+    color: red;
+}
